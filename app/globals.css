@@ -1,0 +1,225 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* MoveViz Design System - Coral Pink & Soft Mint Theme */
+:root {
+  /* MoveViz Core Colors */
+  --mv-main: #FF7F50;        /* Coral Pink - CTA, 로고, 브랜드 */
+  --mv-main-hover: #E66E3D;
+  --mv-secondary: #B2F2BB;   /* Soft Mint - 성공, 보조 강조 */
+  --mv-text: #2D3436;        /* Deep Navy - 본문, 타이틀, 경계선 */
+  --mv-subtext: #636E72;     /* Muted text */
+  --mv-background: #FFF5F1;  /* Light Peach - 전체 배경 */
+  --mv-card: #FFFFFF;
+  --mv-border: #2D3436;
+  --mv-border-light: rgba(45, 52, 54, 0.2);
+  --mv-error: #E74C3C;
+  --mv-warning: #F39C12;
+
+  /* Mapped to shadcn tokens */
+  --background: #FFF5F1;
+  --foreground: #2D3436;
+  --card: #FFFFFF;
+  --card-foreground: #2D3436;
+  --popover: #FFFFFF;
+  --popover-foreground: #2D3436;
+  --primary: #FF7F50;
+  --primary-foreground: #FFFFFF;
+  --secondary: #B2F2BB;
+  --secondary-foreground: #2D3436;
+  --muted: #FFFBF9;
+  --muted-foreground: #636E72;
+  --accent: #FF7F50;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E74C3C;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(45, 52, 54, 0.25);
+  --input: rgba(45, 52, 54, 0.15);
+  --ring: #FF7F50;
+  --chart-1: #FF7F50;
+  --chart-2: #B2F2BB;
+  --chart-3: #E74C3C;
+  --chart-4: #F39C12;
+  --chart-5: #636E72;
+  --radius: 0.75rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #2D3436;
+  --sidebar-primary: #FF7F50;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #B2F2BB;
+  --sidebar-accent-foreground: #2D3436;
+  --sidebar-border: rgba(45, 52, 54, 0.2);
+  --sidebar-ring: #FF7F50;
+}
+
+.dark {
+  --background: #FFF5F1;
+  --foreground: #2D3436;
+  --card: #FFFFFF;
+  --card-foreground: #2D3436;
+  --popover: #FFFFFF;
+  --popover-foreground: #2D3436;
+  --primary: #FF7F50;
+  --primary-foreground: #FFFFFF;
+  --secondary: #B2F2BB;
+  --secondary-foreground: #2D3436;
+  --muted: #FFFBF9;
+  --muted-foreground: #636E72;
+  --accent: #FF7F50;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E74C3C;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(45, 52, 54, 0.25);
+  --input: rgba(45, 52, 54, 0.15);
+  --ring: #FF7F50;
+  --chart-1: #FF7F50;
+  --chart-2: #B2F2BB;
+  --chart-3: #E74C3C;
+  --chart-4: #F39C12;
+  --chart-5: #636E72;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #2D3436;
+  --sidebar-primary: #FF7F50;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #B2F2BB;
+  --sidebar-accent-foreground: #2D3436;
+  --sidebar-border: rgba(45, 52, 54, 0.2);
+  --sidebar-ring: #FF7F50;
+}
+
+@theme inline {
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: var(--font-roboto-mono), 'Roboto Mono', monospace;
+  --font-display: var(--font-bebas-neue), 'Bebas Neue', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* MoveViz Custom Styles */
+.font-display {
+  font-family: var(--font-bebas-neue), 'Bebas Neue', sans-serif;
+}
+
+.font-mono-numeric {
+  font-family: var(--font-roboto-mono), 'Roboto Mono', monospace;
+}
+
+/* Moving Animation for Dashboard Banner */
+@keyframes moveBox {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(120px);
+  }
+  50% {
+    transform: translateX(120px);
+  }
+  90% {
+    transform: translateX(240px);
+  }
+  100% {
+    transform: translateX(240px);
+  }
+}
+
+.animate-move-box {
+  animation: moveBox 4s ease-in-out infinite;
+}
+
+/* Status Badge Colors */
+.status-complete {
+  background-color: #B2F2BB;
+  color: #2D3436;
+}
+
+.status-warning {
+  background-color: #F39C12;
+  color: #2D3436;
+}
+
+.status-error {
+  background-color: #E74C3C;
+  color: white;
+}
+
+.status-pending {
+  background-color: rgba(45, 52, 54, 0.15);
+  color: #636E72;
+}
+
+/* Card Hover Effects */
+.module-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.module-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 127, 80, 0.2);
+}
+
+.module-card.active {
+  border-color: #FF7F50;
+  box-shadow: 0 0 20px rgba(255, 127, 80, 0.25);
+}
+
+.module-card.completed {
+  opacity: 0.85;
+}
+
+/* Button Styles */
+.btn-primary {
+  min-height: 48px;
+  background-color: #FF7F50;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #E66E3D;
+}
